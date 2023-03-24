@@ -1,0 +1,40 @@
+export const lightTheme = {
+  body: "hsl(250, 30%, 96%)",
+  bodySecondary: "hsl(0, 0%, 100%)",
+  bodyOpacity: "#343541",
+  text: "hsl(207, 7%, 25%)",
+  lightText: "hsl(232, 15%, 52%)",
+  textInverted: "hsl(0, 0%, 100%)",
+  darkBlue: "hsl(232, 15%, 52%)",
+  bannerBackground: "hsl(276, 45%, 96%)",
+  background: "hsl(0, 0%, 100%)",
+  cardBackground: "hsl(0, 0%, 100%)",
+  border: "0.1rem solid hsla(215, 20%, 81%)",
+  inputBorder: "hsla(215, 20%, 81%)",
+  accentColor: "hsl(273, 75%, 45%)",
+  filter:
+    "invert(19%) sepia(83%) saturate(2736%) hue-rotate(264deg) brightness(89%) contrast(111%)",
+  accentOpacity: "hsla(273, 75%, 45%, 0.5)",
+  footerBackground: "hsl(0, 0%, 100%)",
+  bannerImage: 'url("5528913.jpg")',
+};
+export const darkTheme = {
+  body: "#343541",
+  bodySecondary: "#3f3f4b",
+  cardBackground: "#3f3f4b",
+  bodyOpacity: "#464751",
+  bannerBackground: "#3f3f4b",
+  text: "hsl(0, 0%, 100%)",
+  lightText: "hsl(0, 0%, 100%)",
+  textInverted: "hsl(231, 27%, 10%)",
+  background: "#40414f",
+  border: "0.1rem solid #9da1aa75",
+  inputBorder: " hsla(222, 7%, 64%, 0.459)",
+  accentColor: "#fbff00",
+  filter:
+    "invert(95%) sepia(42%) saturate(2905%) hue-rotate(3deg) brightness(102%) contrast(101%)",
+  accentOpacity: "hsla(61, 100%, 50%, 0.5)",
+  footerBackground: "#3f3f4b",
+  bannerImage:
+    "linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url('bg-banner.webp')",
+};
