@@ -178,6 +178,7 @@ export const AppContextProvider = ({ children }) => {
         userCodes,
         handleSaveCode,
         handleNotifications,
+        handleDeleteCode,
       }}
     >
       {children}
