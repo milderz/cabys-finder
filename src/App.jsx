@@ -58,6 +58,7 @@ function App() {
     userCodes,
     handleSaveCode,
     handleNotifications,
+    handleDeleteCode,
   } = useContext(AppContext);
 
   useEffect(() => {
