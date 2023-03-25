@@ -5,7 +5,9 @@ export const StyledColorModeButton = styled.button`
   width: 3.8rem;
   background: ${({ theme }) => theme.body};
   border-radius: 0.8rem;
-  border: ${({ theme }) => theme.border};
+  border: 0.2rem solid
+    ${({ theme, inputFocused }) =>
+      inputFocused ? theme.accentColor : theme.inputBorder};
   cursor: pointer;
   transition: border 0.2s ease;
   svg {
