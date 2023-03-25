@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { UserAuth } from "../Context/AuthContext";
 import Button from "./Button";
 import ColorModeButton from "./ColorModeButton";
+import mainLogo from "../assets/carpetalupa.png";
 
 const Header = ({
   themeToggler,
@@ -72,11 +73,7 @@ const Header = ({
       </div>
       <div className="logo">
         <Link to="/">
-          <img
-            src="carpetalupa.png"
-            height="32px"
-            alt="cabys-logo-main-header"
-          />
+          <img src={mainLogo} height="32px" alt="cabys-logo-main-header" />
           <h2 className="logo-title">Buscador CABYS</h2>
         </Link>
       </div>
