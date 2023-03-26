@@ -16,7 +16,7 @@ const LoginSection = () => {
     <StyledLoginSection>
       <img
         className="no-logged-img"
-        src="/padlock.png"
+        src="../src/assets/padlock.png"
         alt="sin-resultados"
         height="60px"
       />
