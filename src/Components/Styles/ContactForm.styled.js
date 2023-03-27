@@ -19,6 +19,7 @@ export const StyledContactForm = styled.section`
     padding: 2.6rem 2.6rem;
     height: fit-content;
     border-radius: 0.8rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 
     @media screen and (max-width: 768px) {
       flex: 1;

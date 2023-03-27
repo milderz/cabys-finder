@@ -1,5 +1,5 @@
 export const lightTheme = {
-  body: "hsl(250, 30%, 96%)",
+  body: "#f1f4f9",
   bodySecondary: "hsl(0, 0%, 100%)",
   bodyOpacity: "#343541",
   text: "hsl(207, 7%, 25%)",
@@ -11,10 +11,10 @@ export const lightTheme = {
   cardBackground: "hsl(0, 0%, 100%)",
   border: "0.1rem solid hsla(215, 20%, 81%)",
   inputBorder: "hsla(215, 20%, 81%)",
-  accentColor: "hsl(273, 75%, 45%)",
+  accentColor: "#0167ff",
   filter:
-    "invert(19%) sepia(83%) saturate(2736%) hue-rotate(264deg) brightness(89%) contrast(111%)",
-  accentOpacity: "hsla(273, 75%, 45%, 0.5)",
+    "invert(37%) sepia(91%) saturate(5653%) hue-rotate(210deg) brightness(101%) contrast(107%);",
+  accentOpacity: "hsla(216, 100%, 50%, 0.50)",
   footerBackground: "hsl(0, 0%, 100%)",
   bannerImage: 'url("5528913.jpg")',
 };

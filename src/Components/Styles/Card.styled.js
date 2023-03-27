@@ -8,6 +8,7 @@ export const StyledCard = styled.article`
   flex-direction: column;
   gap: 2.6rem;
   background-color: ${({ theme }) => theme.cardBackground};
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 
   .card-content {
     width: 100%;
