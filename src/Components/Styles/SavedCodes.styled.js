@@ -6,6 +6,11 @@ export const StyledSavedCodes = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 650px) {
+      flex-direction: column;
+      gap: 2.6rem;
+    }
   }
 
   .search-saved-codes {
