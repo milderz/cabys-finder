@@ -25,11 +25,11 @@ export const StyledCard = styled.article`
   }
   .description {
     font-size: var(--text-sm);
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
 
     span {
       font-weight: 400;
-      color: ${({ theme }) => theme.text};
+      color: var(--text);
     }
 
     @media screen and (max-width: 768px) {
@@ -39,12 +39,12 @@ export const StyledCard = styled.article`
 
   .card-text {
     font-size: var(--text-sm);
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
     font-weight: 600;
 
     span {
       font-weight: 400;
-      color: ${({ theme }) => theme.text};
+      color: var(--text);
     }
   }
   .code {
@@ -65,8 +65,8 @@ export const StyledCard = styled.article`
         top: -2.6rem;
         left: 50%;
         transform: translateX(-50%);
-        background-color: ${({ theme }) => theme.accentColor};
-        color: ${({ theme }) => theme.textInverted};
+        background-color: var(--accent-color);
+        color: var(--text-inverted);
         font-size: 1.2rem;
         font-weight: 700;
         padding: 0.4rem 0.8rem;
@@ -84,7 +84,7 @@ export const StyledCard = styled.article`
       svg {
         margin-right: 0.6rem;
         height: 1.2rem;
-        color: ${({ theme }) => theme.accentColor};
+        color: var(--accent-color);
       }
     }
   }
@@ -97,10 +97,10 @@ export const StyledCard = styled.article`
     cursor: pointer;
     padding: 0;
     margin: 0 0 2.4rem 0;
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
 
     svg {
-      color: ${({ theme }) => theme.accentColor};
+      color: var(--accent-color);
       margin-left: 0.8rem;
       transition: transform 0.4s ease;
     }
@@ -114,10 +114,10 @@ export const StyledCard = styled.article`
 
     .tag {
       font-size: 1.2rem;
-      background-color: ${({ theme }) => theme.accentColor};
+      background-color: var(--accent-color);
       padding: 0.4rem 1.2rem;
       border-radius: 10rem;
-      color: ${({ theme }) => theme.textInverted};
+      color: var(--text-inverted);
       min-width: fit-content;
       font-weight: 800;
     }
@@ -131,7 +131,7 @@ export const StyledCard = styled.article`
 
     svg {
       height: 1.6rem;
-      color: ${({ theme }) => theme.accentColor};
+      color: var(--accent-color);
     }
 
     ::after {
@@ -140,8 +140,8 @@ export const StyledCard = styled.article`
       top: -2.6rem;
       left: 50%;
       transform: translateX(-50%);
-      background-color: ${({ theme }) => theme.accentColor};
-      color: ${({ theme }) => theme.textInverted};
+      background-color: var(--accent-color);
+      color: var(--text-inverted);
       font-size: 1.2rem;
       font-weight: 700;
       padding: 0.4rem 0.8rem;

@@ -9,6 +9,9 @@ export const StyledContactBanner = styled.article`
   margin: 5.2rem auto -5.2rem auto;
   position: relative;
   z-index: 2;
+  background-color: var(--body);
+  border: var(--border);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 
   background-position: center;
   background-size: cover;
