@@ -30,6 +30,7 @@ const ModalAlert = ({
 
       <Button
         version="main-small"
+        color="accent"
         text="Iniciar sesión"
         icon="faArrowRightFromBracket"
         handleFunction={handleGoogleSignIn}

@@ -18,7 +18,7 @@ export const StyledButton = styled.button`
     color === "accent"
       ? "var(--accent-color)"
       : color === "white"
-      ? theme.text
+      ? "var(--text)"
       : color === "black"
       ? theme.body
       : "none"};
@@ -27,7 +27,7 @@ export const StyledButton = styled.button`
   cursor: pointer;
 
   :hover {
-    background-color: ${({ theme }) => theme.accentOpacity};
+    background-color: var(--accent-opacity);
     cursor: pointer;
   }
 
