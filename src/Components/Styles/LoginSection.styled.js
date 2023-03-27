@@ -11,6 +11,6 @@ export const StyledLoginSection = styled.section`
   gap: 2.6rem;
 
   .no-logged-img {
-    filter: ${({ theme }) => theme.filter};
+    filter: var(--filter);
   }
 `;

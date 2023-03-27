@@ -99,16 +99,16 @@ export const StyledContactForm = styled.section`
     width: 35rem;
     background-color: transparent;
     border: 2px solid transparent;
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
     transition: border 0.2s ease;
     svg {
       padding-right: 1.6rem;
-      color: ${({ theme }) => theme.accentColor};
+      color: var(--accent-color);
     }
 
     :hover {
-      border: 2px solid ${({ theme }) => theme.accentColor};
-      background-color: ${({ theme }) => theme.background};
+      border: 2px solid var(--accent-color);
+      background-color: var(--background);
     }
   }
 `;

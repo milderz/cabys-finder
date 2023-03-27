@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledContainer = styled.section`
-  background: ${({ theme, bgColor }) =>
-    bgColor === "primary" ? theme.body : theme.bodySecondary};
+  background: ${({ bgColor }) =>
+    bgColor === "primary" ? "var(--body)" : "var(--body-secondary)"};
   filter: ${({ modalActive, profileMenuActive }) =>
     modalActive || profileMenuActive ? "brightness(0.45)" : "brightness(1)"};
   pointer-events: ${({ modalActive, profileMenuActive }) =>

@@ -10,21 +10,21 @@ export const StyledSavedCodes = styled.section`
 
   .search-saved-codes {
     input {
-      background-color: ${({ theme }) => theme.bodySecondary};
+      background-color: var(--body-secondary);
       border: none;
       height: 3.9rem;
       width: 30rem;
       border-radius: 0.8rem;
-      border: 0.2rem solid ${({ theme }) => theme.inputBorder};
+      border: 0.2rem solid var(--input-border);
       transition: border 0.2s ease;
       outline: none;
       font-size: var(--text-sm);
       padding-left: 1.6rem;
-      caret-color: ${({ theme }) => theme.accentColor};
-      color: ${({ theme }) => theme.text};
+      caret-color: var(--accent-color);
+      color: var(--text);
 
       :focus {
-        border: 0.2rem solid ${({ theme }) => theme.accentColor};
+        border: 0.2rem solid var(--accent-color);
       }
 
       ::placeholder {
@@ -39,7 +39,7 @@ export const StyledSavedCodes = styled.section`
     gap: 1.3rem;
     svg {
       height: 1.6rem;
-      color: ${({ theme }) => theme.accentColor};
+      color: var(--accent-color);
     }
   }
   .saved-codes-grid {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
-  background-color: ${({ theme }) => theme.footerBackground};
+  background-color: var(--footer-background);
   padding: 9.2rem 0 5.2rem 0;
   border-top: 0.1rem solid hsla(215, 20%, 81%);
 
@@ -27,7 +27,7 @@ export const StyledFooter = styled.footer`
   }
 
   .link {
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
   }
 
   .created-by {
@@ -35,16 +35,16 @@ export const StyledFooter = styled.footer`
     gap: 0.8rem;
   }
   .created-by-text {
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
   }
   .created-by-link {
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
     text-decoration: underline;
     text-decoration-color: transparent;
 
     :hover {
-      text-decoration-color: ${({ theme }) => theme.accentColor};
-      color: ${({ theme }) => theme.accentColor};
+      text-decoration-color: var(--accent-color);
+      color: var(--accent-color);
     }
   }
 

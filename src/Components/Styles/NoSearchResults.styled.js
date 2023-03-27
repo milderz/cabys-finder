@@ -10,18 +10,18 @@ export const StyledNoSearchResults = styled.section`
   gap: 2.4rem;
   text-align: center;
   .no-results-img {
-    filter: ${({ theme }) => theme.filter};
+    filter: var(--filter);
   }
   .no-results-title {
     font-size: var(--text-md);
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
   }
 
   .no-results-text {
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
 
     span {
-      color: ${({ theme }) => theme.accentColor};
+      color: var(--accent-color);
       font-weight: 600;
     }
   }

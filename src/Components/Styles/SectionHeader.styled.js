@@ -8,6 +8,6 @@ export const StyledSectionHeader = styled.header`
 
   svg {
     height: 1.6rem;
-    color: ${({ theme }) => theme.accentColor};
+    color: var(--accent-color);
   }
 `;

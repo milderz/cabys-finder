@@ -7,10 +7,10 @@ export const StyledSearchStats = styled.header`
   .search-results {
     font-size: var(--text-sm);
     font-weight: 600;
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
 
     span {
-      color: ${({ theme }) => theme.accentColor};
+      color: var(--accent-color);
     }
   }
 

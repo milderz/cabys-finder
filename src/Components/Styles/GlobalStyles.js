@@ -32,8 +32,8 @@ export const GlobalStyles = createGlobalStyle`
 --accent-color: #0167ff;
 --filter:
   invert(37%) sepia(91%) saturate(5653%) hue-rotate(210deg) brightness(101%) contrast(107%);
---accent-opacity: "hsla(216, 100%, 50%, 0.50)";
---footer-background: "hsl(0, 0%, 100%)";
+--accent-opacity: hsla(216, 100%, 50%, 0.50);
+--footer-background: hsl(0, 0%, 100%);
 --text-xs: 1.2rem;
 --text-sm: 1.6rem;
 --text-md: 2.2rem;

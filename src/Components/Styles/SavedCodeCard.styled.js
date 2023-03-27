@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledSavedCodeCard = styled.article`
-  background-color: ${({ theme }) => theme.cardBackground};
-  border: ${({ theme }) => theme.border};
+  background-color: var(--card-background);
+  border: var(--border);
   border-radius: 0.8rem;
   padding: 2.6rem;
   display: flex;
@@ -28,8 +28,8 @@ export const StyledSavedCodeCard = styled.article`
       top: -2.6rem;
       left: 50%;
       transform: translateX(-50%);
-      background-color: ${({ theme }) => theme.accentColor};
-      color: ${({ theme }) => theme.textInverted};
+      background-color: var(--accent-color);
+      color: var(--text-inverted);
       font-size: 1.2rem;
       font-weight: 700;
       padding: 0.4rem 0.8rem;
@@ -46,7 +46,7 @@ export const StyledSavedCodeCard = styled.article`
     }
     svg {
       height: 1.6rem;
-      color: ${({ theme }) => theme.accentColor};
+      color: var(--accent-color);
     }
   }
 
@@ -60,8 +60,8 @@ export const StyledSavedCodeCard = styled.article`
       top: -2.6rem;
       left: 50%;
       transform: translateX(-50%);
-      background-color: ${({ theme }) => theme.accentColor};
-      color: ${({ theme }) => theme.textInverted};
+      background-color: var(--accent-color);
+      color: var(--text-inverted);
       font-size: 1.2rem;
       font-weight: 700;
       padding: 1.3rem;
@@ -89,7 +89,7 @@ export const StyledSavedCodeCard = styled.article`
 
   .card-text {
     font-size: var(--text-sm);
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
     font-weight: 700;
 
     span {
@@ -115,8 +115,8 @@ export const StyledSavedCodeCard = styled.article`
         top: -2.6rem;
         left: 50%;
         transform: translateX(-50%);
-        background-color: ${({ theme }) => theme.accentColor};
-        color: ${({ theme }) => theme.textInverted};
+        background-color: var(--accent-color);
+        color: var(--text-inverted);
         font-size: 1.2rem;
         font-weight: 700;
         padding: 0.4rem 0.8rem;
@@ -134,7 +134,7 @@ export const StyledSavedCodeCard = styled.article`
       svg {
         margin-right: 0.6rem;
         height: 1.2rem;
-        color: ${({ theme }) => theme.accentColor};
+        color: var(--accent-color);
       }
     }
   }

@@ -7,7 +7,7 @@ export const StyledModalAlert = styled.article`
   transform: translate(-50%, -50%);
   width: 40rem;
   height: 30rem;
-  background-color: ${({ theme }) => theme.background};
+  background-color: var(--background);
   border: 1px solid #9da1aa75;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
   border-radius: 0.8rem;
@@ -27,11 +27,11 @@ export const StyledModalAlert = styled.article`
 
   .modal-alert-title {
     font-size: var(--text-md);
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
   }
   .modal-alert-text {
     font-size: var(--text-sm);
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
   }
 
   .close-modal-button {
@@ -50,15 +50,15 @@ export const StyledModalAlert = styled.article`
 
     svg {
       height: 2.2rem;
-      color: ${({ theme }) => theme.accentColor};
+      color: var(--accent-color);
     }
 
     :hover {
-      background-color: ${({ theme }) => theme.body};
+      background-color: var(--body);
     }
   }
 
   .no-logged-img {
-    filter: ${({ theme }) => theme.filter};
+    filter: var(--filter);
   }
 `;
