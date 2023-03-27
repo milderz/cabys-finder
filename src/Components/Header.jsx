@@ -11,18 +11,15 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { UserAuth } from "../Context/AuthContext";
 import Button from "./Button";
-import ColorModeButton from "./ColorModeButton";
+
 import mainLogo from "../assets/carpetalupa.png";
 
 const Header = ({
-  themeToggler,
-  theme,
   navActive,
   setNavActive,
   profileMenuActive,
   setProfileMenuActive,
 }) => {
-  const [darkModeToggle, setDarkModeToggle] = useState(false);
   const [userLoggedIn, setUserLoggedIn] = useState();
 
   const { googleSignIn, user, logOut, loadingUserData } = UserAuth();
@@ -33,9 +30,6 @@ const Header = ({
 
   const handleNavActive = () => {
     setNavActive(!navActive);
-  };
-  const handleDarkModeToggle = () => {
-    setDarkModeToggle(!darkModeToggle);
   };
 
   const handleGoogleSignIn = async () => {

@@ -8,7 +8,7 @@ import {
 import { db } from "../firebase";
 import { useState, useEffect } from "react";
 import { createContext } from "react";
-import { UserAuth } from "./AuthContext";
+import { v4 as uuidv4 } from "uuid";
 
 export const AppContext = createContext();
 
@@ -26,7 +26,7 @@ export const AppContextProvider = ({ children }) => {
   const [searchDescription, setSearchDescription] = useState("");
   const [loading, setLoading] = useState(false);
   const [eventQueue, setEventQueue] = useState([]);
-  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  // const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [modalActive, setModalActive] = useState(false);
   const [navActive, setNavActive] = useState(false);
   const [profileMenuActive, setProfileMenuActive] = useState(false);
@@ -92,43 +92,6 @@ export const AppContextProvider = ({ children }) => {
     }
   };
 
-  const handleSaveCode = async (description, code, tax) => {
-    if (userLoggedIn) {
-      const codeAlreadySaved = userCodes.some(
-        (code) => code.description === description
-      );
-
-      if (!codeAlreadySaved) {
-        let newCodeId = uuidv4();
-        let newCode = {
-          id: newCodeId,
-          description,
-          code,
-          tax,
-          userId: user?.email,
-        };
-        setSavedCodes([...savedCodes, newCode]);
-        setUserCodes([...userCodes, newCode]);
-        const notificationMessage = {
-          type: "saved",
-        };
-
-        await setDoc(doc(db, "codes", newCodeId), newCode);
-
-        handleNotifications(notificationMessage);
-        return;
-      }
-
-      const notificationMessage = {
-        type: "duplicatedSavedCode",
-      };
-
-      handleNotifications(notificationMessage);
-    } else {
-      setModalActive(true);
-    }
-  };
-
   const handleDeleteCode = async (id) => {
     console.log("handle delete");
     const deletedCode = userCodes.filter((code) => code.id !== id);
@@ -153,6 +116,49 @@ export const AppContextProvider = ({ children }) => {
     setModalActive(!modalActive);
   };
 
+  const handleSaveCode = async (
+    description,
+    code,
+    tax,
+    userLoggedIn,
+    userId
+  ) => {
+    if (userLoggedIn) {
+      const codeAlreadySaved = userCodes.some(
+        (code) => code.description === description
+      );
+
+      if (!codeAlreadySaved) {
+        let newCodeId = uuidv4();
+        let newCode = {
+          id: newCodeId,
+          description,
+          code,
+          tax,
+          userId: "mzunax@gmail.com",
+        };
+        setSavedCodes([...savedCodes, newCode]);
+        setUserCodes([...userCodes, newCode]);
+        const notificationMessage = {
+          type: "saved",
+        };
+
+        await setDoc(doc(db, "codes", newCodeId), newCode);
+
+        handleNotifications(notificationMessage);
+        return;
+      }
+
+      const notificationMessage = {
+        type: "duplicatedSavedCode",
+      };
+
+      handleNotifications(notificationMessage);
+    } else {
+      setModalActive(true);
+    }
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -172,10 +178,10 @@ export const AppContextProvider = ({ children }) => {
         response,
         codes,
         userCodes,
-        handleSaveCode,
         handleNotifications,
         handleDeleteCode,
         searchTerm,
+        handleSaveCode,
       }}
     >
       {children}

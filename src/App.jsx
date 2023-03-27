@@ -7,7 +7,7 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebase";
 import { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./Components/Styles/GlobalStyles";
@@ -39,10 +39,8 @@ import noSearchResults from "./assets/lupa-sin-resultados.png";
 import codesFolder from "./assets/carpeta-de-archivos.png";
 
 function App() {
-  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const { user, loadingUserData, userLoggedIn } = UserAuth();
 
-  const { user, loadingUserData } = UserAuth();
-  const { theme, themeToggler } = useContext(ThemeContext);
   const {
     eventQueue,
     handleModalActive,
@@ -60,15 +58,10 @@ function App() {
     response,
     codes,
     userCodes,
-    handleSaveCode,
     handleNotifications,
     handleDeleteCode,
     searchTerm,
   } = useContext(AppContext);
-
-  useEffect(() => {
-    user?.displayName ? setUserLoggedIn(true) : setUserLoggedIn(false);
-  }, [user]);
 
   return (
     <Router>
@@ -93,8 +86,6 @@ function App() {
               setNavActive={setNavActive}
               profileMenuActive={profileMenuActive}
               setProfileMenuActive={setProfileMenuActive}
-              themeToggler={themeToggler}
-              theme={theme}
             />
           </>
         }
@@ -152,7 +143,6 @@ function App() {
                             code={code.codigo}
                             tax={code.impuesto}
                             categories={code.categorias}
-                            handleSaveCode={handleSaveCode}
                             handleNotifications={handleNotifications}
                           />
                         ))}

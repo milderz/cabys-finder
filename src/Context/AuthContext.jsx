@@ -12,6 +12,7 @@ import { useEffect } from "react";
 const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   const [loadingUserData, setLoadingUserData] = useState(false);
 
@@ -35,6 +36,10 @@ export const AuthContextProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
+
+  useEffect(() => {
+    user?.displayName ? setUserLoggedIn(true) : setUserLoggedIn(false);
+  }, [user]);
 
   return (
     <AuthContext.Provider
