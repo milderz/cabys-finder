@@ -65,7 +65,7 @@ const Card = ({ categories, description, code, tax, handleNotifications }) => {
           <button
             className="card-text save-code-btn"
             onClick={() =>
-              handleSaveCode(description, code, tax, userLoggedIn, setUserId)
+              handleSaveCode(description, code, tax, userLoggedIn, userId)
             }
           >
             <FontAwesomeIcon icon={faBookmark} />
