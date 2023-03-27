@@ -38,7 +38,6 @@ import noSearchResults from "./assets/lupa-sin-resultados.png";
 import codesFolder from "./assets/carpeta-de-archivos.png";
 
 function App() {
-  const [userLoggedIn, setUserLoggedIn] = useState(false);
   const { user, loadingUserData } = UserAuth();
 
   const {
@@ -61,11 +60,8 @@ function App() {
     handleNotifications,
     handleDeleteCode,
     searchTerm,
+    userLoggedIn,
   } = useContext(AppContext);
-
-  useEffect(() => {
-    user?.displayName && setUserLoggedIn(true);
-  }, [user]);
 
   return (
     <Router>

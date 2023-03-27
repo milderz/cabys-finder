@@ -9,6 +9,7 @@ import { db } from "../firebase";
 import { useState, useEffect } from "react";
 import { createContext } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { UserAuth } from "../Context/AuthContext";
 
 export const AppContext = createContext();
 
@@ -26,7 +27,8 @@ export const AppContextProvider = ({ children }) => {
   const [searchDescription, setSearchDescription] = useState("");
   const [loading, setLoading] = useState(false);
   const [eventQueue, setEventQueue] = useState([]);
-  // const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [userId, setUserId] = useState("");
   const [modalActive, setModalActive] = useState(false);
   const [navActive, setNavActive] = useState(false);
   const [profileMenuActive, setProfileMenuActive] = useState(false);
@@ -116,13 +118,7 @@ export const AppContextProvider = ({ children }) => {
     setModalActive(!modalActive);
   };
 
-  const handleSaveCode = async (
-    description,
-    code,
-    tax,
-    userLoggedIn,
-    userId
-  ) => {
+  const handleSaveCode = async (description, code, tax) => {
     if (userLoggedIn) {
       const codeAlreadySaved = userCodes.some(
         (code) => code.description === description
@@ -159,6 +155,13 @@ export const AppContextProvider = ({ children }) => {
     }
   };
 
+  const { user } = UserAuth();
+
+  useEffect(() => {
+    user && setUserLoggedIn(true);
+    setUserId(user.email);
+  }, [user]);
+
   return (
     <AppContext.Provider
       value={{
@@ -182,6 +185,7 @@ export const AppContextProvider = ({ children }) => {
         handleDeleteCode,
         searchTerm,
         handleSaveCode,
+        userLoggedIn,
       }}
     >
       {children}

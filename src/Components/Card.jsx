@@ -6,21 +6,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { StyledCard } from "./Styles/Card.styled";
 import { useState, useContext, useEffect } from "react";
-import { UserAuth } from "../Context/AuthContext";
 import { AppContext } from "../Context/AppContext";
 
 const Card = ({ categories, description, code, tax, handleNotifications }) => {
   const [showCategories, setShowCategories] = useState(false);
-
-  const [userLoggedIn, setUserLoggedIn] = useState();
-  const [userId, setUserId] = useState("");
-
-  const { user } = UserAuth();
-
-  useEffect(() => {
-    user?.displayName && setUserLoggedIn(true);
-    user?.email && setUserId(user?.email);
-  }, [user]);
 
   const { handleSaveCode } = useContext(AppContext);
 
@@ -64,9 +53,7 @@ const Card = ({ categories, description, code, tax, handleNotifications }) => {
         <div className="content-right">
           <button
             className="card-text save-code-btn"
-            onClick={() =>
-              handleSaveCode(description, code, tax, userLoggedIn, userId)
-            }
+            onClick={() => handleSaveCode(description, code, tax)}
           >
             <FontAwesomeIcon icon={faBookmark} />
           </button>
