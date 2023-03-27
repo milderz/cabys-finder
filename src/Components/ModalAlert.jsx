@@ -3,6 +3,8 @@ import Button from "./Button";
 import { StyledModalAlert } from "./Styles/ModalAlert.styled";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
+import loginPadlock from "../assets/padlock.png";
+
 const ModalAlert = ({
   titleMessage,
   titleText,
@@ -14,7 +16,7 @@ const ModalAlert = ({
     <StyledModalAlert modalActive={modalActive}>
       <img
         className="no-logged-img"
-        src="/padlock.png"
+        src={loginPadlock}
         alt="sin-resultados"
         height="60px"
       />

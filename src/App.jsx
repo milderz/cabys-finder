@@ -34,7 +34,9 @@ import { AppContext } from "./Context/AppContext";
 import { ThemeContext } from "./Context/ThemeContext";
 import { useContext } from "react";
 
-import Lupa from "../src/assets/lupa.png";
+import noResults from "./assets/lupa.png";
+import noSearchResults from "./assets/lupa-sin-resultados.png";
+import codesFolder from "./assets/carpeta-de-archivos.png";
 
 function App() {
   const [userLoggedIn, setUserLoggedIn] = useState(false);
@@ -133,13 +135,13 @@ function App() {
                         <NoSearchResults
                           title="Sin resultados"
                           text="Intenta buscando por descripción o por número de código."
-                          img="../src/assets/lupa.png"
+                          img={noResults}
                         />
                       ) : response.cantidad === 0 && response.total === 0 ? (
                         <NoSearchResults
                           title="Sin resultados"
                           text="No hemos encontrado resultados para: "
-                          img="../src/assets/lupa-sin-resultados.png"
+                          img={noSearchResults}
                           searchTerm={searchTerm}
                         />
                       ) : (
@@ -181,7 +183,7 @@ function App() {
                       <NoSearchResults
                         title="No hay códigos guardados"
                         text=" Los códigos que guardes aparecerán aquí"
-                        img="../src/assets/carpeta-de-archivos.png"
+                        img={codesFolder}
                       />
                     ) : (
                       <div className="saved-codes-container">
