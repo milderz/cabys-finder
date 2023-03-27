@@ -68,7 +68,7 @@ function App() {
       <GlobalStyles />
       <div className="notification-container">
         {eventQueue.map((notification) => (
-          <Notification type={notification.type} />
+          <Notification key={notification.id} type={notification.type} />
         ))}
       </div>
       <ModalAlert

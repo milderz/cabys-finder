@@ -95,11 +95,11 @@ export const AppContextProvider = ({ children }) => {
   };
 
   const handleDeleteCode = async (id) => {
-    console.log("handle delete");
     const deletedCode = userCodes.filter((code) => code.id !== id);
     setUserCodes(deletedCode);
     const notificationMessage = {
       type: "deleted",
+      id: uuidv4(),
     };
 
     await deleteDoc(doc(db, "codes", id));
