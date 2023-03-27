@@ -48,10 +48,6 @@ export const AppContextProvider = ({ children }) => {
     fetchCodes();
   }, []);
 
-  // useEffect(() => {
-  //   user?.displayName ? setuserLoggedIn(true) : setUserLoggedIn(false);
-  // }, [user]);
-
   useEffect(() => {
     const fetchCabys = async (url) => {
       try {
