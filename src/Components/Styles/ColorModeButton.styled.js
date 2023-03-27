@@ -3,24 +3,24 @@ import styled from "styled-components";
 export const StyledColorModeButton = styled.button`
   height: 3.8rem;
   width: 3.8rem;
-  background: ${({ theme }) => theme.body};
+  background: var(--body);
   border-radius: 0.8rem;
   border: 0.2rem solid
-    ${({ theme, inputFocused }) =>
-      inputFocused ? theme.accentColor : theme.inputBorder};
+    ${({ inputFocused }) =>
+      inputFocused ? "var(--accent-color)" : "var(--input-border)"};
   cursor: pointer;
   transition: border 0.2s ease;
   svg {
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
     height: 1.6rem;
   }
 
   :hover {
-    background: ${({ theme }) => theme.body};
-    border: 0.1rem solid ${({ theme }) => theme.accentColor};
+    background: var(--body);
+    border: 0.2rem solid var(--accent-color);
 
     svg {
-      color: ${({ theme }) => theme.accentColor};
+      color: var(--accent-color);
     }
   }
 `;

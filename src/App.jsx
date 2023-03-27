@@ -71,157 +71,155 @@ function App() {
   }, [user]);
 
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <Router>
-        <GlobalStyles />
-        <div className="notification-container">
-          {eventQueue.map((notification) => (
-            <Notification type={notification.type} />
-          ))}
-        </div>
-        <ModalAlert
-          titleMessage="Inicia sesión"
-          titleText="Inicia sesión para guardar tus códigos"
-          handleModalActive={handleModalActive}
-          modalActive={modalActive}
-        />
+    <Router>
+      <GlobalStyles />
+      <div className="notification-container">
+        {eventQueue.map((notification) => (
+          <Notification type={notification.type} />
+        ))}
+      </div>
+      <ModalAlert
+        titleMessage="Inicia sesión"
+        titleText="Inicia sesión para guardar tus códigos"
+        handleModalActive={handleModalActive}
+        modalActive={modalActive}
+      />
 
-        <HeaderContainer
-          children={
+      <HeaderContainer
+        children={
+          <>
+            <Header
+              navActive={navActive}
+              setNavActive={setNavActive}
+              profileMenuActive={profileMenuActive}
+              setProfileMenuActive={setProfileMenuActive}
+              themeToggler={themeToggler}
+              theme={theme}
+            />
+          </>
+        }
+      />
+      <Routes>
+        <Route
+          path="/"
+          element={
             <>
-              <Header
-                navActive={navActive}
-                setNavActive={setNavActive}
+              <Container
+                modalActive={modalActive}
                 profileMenuActive={profileMenuActive}
-                setProfileMenuActive={setProfileMenuActive}
-                themeToggler={themeToggler}
-                theme={theme}
+                bgColor="primary"
+                children={
+                  <>
+                    <Hero
+                      handleOnSubmit={handleOnSubmit}
+                      setSearchTerm={setSearchTerm}
+                    />
+                  </>
+                }
               />
+              <Container
+                bgColor="primary"
+                modalActive={modalActive}
+                profileMenuActive={profileMenuActive}
+                children={
+                  <>
+                    <SearchStats
+                      searchResults={searchResults}
+                      searchCode={searchCode}
+                      searchDescription={searchDescription}
+                    />
+                    {loading ? (
+                      <Loader />
+                    ) : response.code === 400 ? (
+                      <NoSearchResults
+                        title="Sin resultados"
+                        text="Intenta buscando por descripción o por número de código."
+                        img={noResults}
+                      />
+                    ) : response.cantidad === 0 && response.total === 0 ? (
+                      <NoSearchResults
+                        title="Sin resultados"
+                        text="No hemos encontrado resultados para: "
+                        img={noSearchResults}
+                        searchTerm={searchTerm}
+                      />
+                    ) : (
+                      <CardsContainer>
+                        {codes.map((code, index) => (
+                          <Card
+                            key={index}
+                            description={code.descripcion}
+                            code={code.codigo}
+                            tax={code.impuesto}
+                            categories={code.categorias}
+                            handleSaveCode={handleSaveCode}
+                            handleNotifications={handleNotifications}
+                          />
+                        ))}
+                      </CardsContainer>
+                    )}
+                  </>
+                }
+              />
+              <ContactBanner />
             </>
           }
         />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Container
-                  modalActive={modalActive}
-                  profileMenuActive={profileMenuActive}
-                  bgColor="primary"
-                  children={
-                    <>
-                      <Hero
-                        handleOnSubmit={handleOnSubmit}
-                        setSearchTerm={setSearchTerm}
-                      />
-                    </>
-                  }
-                />
-                <Container
-                  bgColor="primary"
-                  modalActive={modalActive}
-                  profileMenuActive={profileMenuActive}
-                  children={
-                    <>
-                      <SearchStats
-                        searchResults={searchResults}
-                        searchCode={searchCode}
-                        searchDescription={searchDescription}
-                      />
-                      {loading ? (
-                        <Loader />
-                      ) : response.code === 400 ? (
-                        <NoSearchResults
-                          title="Sin resultados"
-                          text="Intenta buscando por descripción o por número de código."
-                          img={noResults}
+        <Route
+          path="/guardados"
+          element={
+            <>
+              <Container
+                bgColor="primary"
+                profileMenuActive={profileMenuActive}
+              >
+                <SavedCodes userCodes={userCodes} userLoggedIn={userLoggedIn}>
+                  {loadingUserData ? (
+                    <Loader />
+                  ) : !userLoggedIn ? (
+                    <LoginSection />
+                  ) : userCodes.length === 0 ? (
+                    <NoSearchResults
+                      title="No hay códigos guardados"
+                      text=" Los códigos que guardes aparecerán aquí"
+                      img={codesFolder}
+                    />
+                  ) : (
+                    <div className="saved-codes-container">
+                      {userCodes.map((code) => (
+                        <SavedCodeCard
+                          key={code.id}
+                          id={code.id}
+                          code={code.code}
+                          description={code.description}
+                          tax={code.tax}
+                          handleDeleteCode={handleDeleteCode}
                         />
-                      ) : response.cantidad === 0 && response.total === 0 ? (
-                        <NoSearchResults
-                          title="Sin resultados"
-                          text="No hemos encontrado resultados para: "
-                          img={noSearchResults}
-                          searchTerm={searchTerm}
-                        />
-                      ) : (
-                        <CardsContainer>
-                          {codes.map((code, index) => (
-                            <Card
-                              key={index}
-                              description={code.descripcion}
-                              code={code.codigo}
-                              tax={code.impuesto}
-                              categories={code.categorias}
-                              handleSaveCode={handleSaveCode}
-                              handleNotifications={handleNotifications}
-                            />
-                          ))}
-                        </CardsContainer>
-                      )}
-                    </>
-                  }
-                />
-                <ContactBanner />
-              </>
-            }
-          />
-          <Route
-            path="/guardados"
-            element={
-              <>
-                <Container
-                  bgColor="primary"
-                  profileMenuActive={profileMenuActive}
-                >
-                  <SavedCodes userCodes={userCodes} userLoggedIn={userLoggedIn}>
-                    {loadingUserData ? (
-                      <Loader />
-                    ) : !userLoggedIn ? (
-                      <LoginSection />
-                    ) : userCodes.length === 0 ? (
-                      <NoSearchResults
-                        title="No hay códigos guardados"
-                        text=" Los códigos que guardes aparecerán aquí"
-                        img={codesFolder}
-                      />
-                    ) : (
-                      <div className="saved-codes-container">
-                        {userCodes.map((code) => (
-                          <SavedCodeCard
-                            key={code.id}
-                            id={code.id}
-                            code={code.code}
-                            description={code.description}
-                            tax={code.tax}
-                            handleDeleteCode={handleDeleteCode}
-                          />
-                        ))}
-                      </div>
-                    )}
-                  </SavedCodes>
-                </Container>
-                <ContactBanner />
-              </>
-            }
-          />
-          <Route
-            path="/contacto"
-            element={
-              <>
-                <Container
-                  bgColor="primary"
-                  profileMenuActive={profileMenuActive}
-                >
-                  <ContactForm />
-                </Container>
-              </>
-            }
-          />
-        </Routes>
-        <Footer profileMenuActive={profileMenuActive} />
-      </Router>
-    </ThemeProvider>
+                      ))}
+                    </div>
+                  )}
+                </SavedCodes>
+              </Container>
+              <ContactBanner />
+            </>
+          }
+        />
+        <Route
+          path="/contacto"
+          element={
+            <>
+              <Container
+                bgColor="primary"
+                profileMenuActive={profileMenuActive}
+              >
+                <ContactForm />
+              </Container>
+            </>
+          }
+        />
+      </Routes>
+      <Footer profileMenuActive={profileMenuActive} />
+    </Router>
   );
 }
 

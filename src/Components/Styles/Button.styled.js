@@ -16,13 +16,13 @@ export const StyledButton = styled.button`
 
   background-color: ${({ theme, color }) =>
     color === "accent"
-      ? theme.accentColor
+      ? "var(--accent-color)"
       : color === "white"
       ? theme.text
       : color === "black"
       ? theme.body
       : "none"};
-  color: ${({ theme }) => theme.textInverted};
+  color: var(--text-inverted);
   transition: background-color 0.2s ease;
   cursor: pointer;
 

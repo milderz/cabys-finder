@@ -9,7 +9,6 @@ export const StyledContactBanner = styled.article`
   margin: 5.2rem auto -5.2rem auto;
   position: relative;
   z-index: 2;
-  background: ${({ theme }) => theme.bannerImage};
 
   background-position: center;
   background-size: cover;
@@ -33,7 +32,7 @@ export const StyledContactBanner = styled.article`
   }
   .contact-banner-title {
     font-size: var(--text-md);
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
 
     @media screen and (max-width: 710px) {
       font-size: var(--text-sm);
@@ -43,6 +42,6 @@ export const StyledContactBanner = styled.article`
   .contact-banner-text {
     font-weight: 600;
     font-size: var(--text-sm);
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
   }
 `;

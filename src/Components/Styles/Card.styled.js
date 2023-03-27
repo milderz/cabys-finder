@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const StyledCard = styled.article`
-  border: ${({ theme }) => theme.border};
+  border: var(--border);
   border-radius: 0.8rem;
   padding: 2.6rem;
   display: flex;
   flex-direction: column;
   gap: 2.6rem;
-  background-color: ${({ theme }) => theme.cardBackground};
+  background-color: var(--card-background);
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 
   .card-content {

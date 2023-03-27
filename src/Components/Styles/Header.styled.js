@@ -6,12 +6,12 @@ export const StyledHeader = styled.header`
   align-items: center;
 
   grid-template-columns: repeat(3, 1fr);
-  border-bottom: ${({ theme }) => theme.border};
+  border-bottom: var(--border);
 
   .loading-user {
     height: 3.2rem;
     width: 3.2rem;
-    background-color: ${({ theme }) => theme.bodySecondary};
+    background-color: var(--body-secondary);
 
     border-radius: 50%;
   }
@@ -35,7 +35,7 @@ export const StyledHeader = styled.header`
       }
     }
     img {
-      filter: ${({ theme }) => theme.filter};
+      filter: var(--filter);
     }
     .logo-title {
       font-size: var(--text-sm);
@@ -62,13 +62,13 @@ export const StyledHeader = styled.header`
         .link {
           font-weight: 500;
           font-size: var(--text-sm);
-          color: ${({ theme }) => theme.text};
+          color: var(--text);
 
           :hover {
-            color: ${({ theme }) => theme.accentColor};
+            color: var(--accent-color);
 
             svg {
-              color: ${({ theme }) => theme.accentColor};
+              color: var(--accent-color);
             }
           }
 
@@ -79,7 +79,7 @@ export const StyledHeader = styled.header`
 
         svg {
           height: 1.6rem;
-          color: ${({ theme }) => theme.text};
+          color: var(--text);
           display: none;
           @media screen and (max-width: 900px) {
             display: inline-block;
@@ -165,14 +165,14 @@ export const StyledHeader = styled.header`
       height: 3.8rem;
       width: 3.8rem;
       background-color: ${({ theme, profileMenuActive }) =>
-        !profileMenuActive ? theme.text : theme.accentColor};
+        !profileMenuActive ? "var(--text)" : "var(--accent-color)"};
       z-index: 2;
       border-radius: 50%;
       transition: background-color 0.2s ease;
     }
 
     :hover::after {
-      background-color: ${({ theme }) => theme.accentColor};
+      background-color: var(--accent-color);
     }
   }
 
@@ -184,7 +184,7 @@ export const StyledHeader = styled.header`
     right: 0;
     top: 7.8rem;
     width: 38.8rem;
-    background-color: ${({ theme }) => theme.background};
+    background-color: var(--background);
     border-radius: 0.8rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 25px 50px -12px;
     height: 30rem;
@@ -216,7 +216,7 @@ export const StyledHeader = styled.header`
   .user-email,
   .user-name {
     font-size: var(--text-sm);
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
   }
 
   .avatar-image-header {
@@ -230,7 +230,7 @@ export const StyledHeader = styled.header`
   .sign-out-button {
     height: 100%;
     font-size: var(--text-sm);
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -246,8 +246,8 @@ export const StyledHeader = styled.header`
     }
 
     :hover {
-      background-color: ${({ theme }) => theme.accentColor};
-      color: ${({ theme }) => theme.textInverted};
+      background-color: var(--accent-color);
+      color: var(--text-inverted);
     }
   }
 
@@ -258,7 +258,7 @@ export const StyledHeader = styled.header`
     .line {
       width: 4rem;
       height: 5px;
-      background-color: ${({ theme }) => theme.accentColor};
+      background-color: var(--accent-color);
       display: block;
       margin: 8px 0;
       -webkit-transition: all 0.3s ease-in-out;

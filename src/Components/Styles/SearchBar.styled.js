@@ -2,29 +2,29 @@ import styled from "styled-components";
 
 export const StyledSearchBar = styled.form`
   height: 8rem;
-  background-color: ${({ theme }) => theme.bodySecondary};
+  background-color: var(--body-secondary);
   padding: 0 1.9rem;
   display: flex;
   align-items: center;
   border-radius: 0.8rem;
   border: 0.2rem solid
-    ${({ theme, inputFocused }) =>
-      inputFocused ? theme.accentColor : theme.inputBorder};
+    ${({ inputFocused }) =>
+      inputFocused ? "var(--accent-color)" : "var(--input-border)"};
   transition: border 0.2s ease;
   .search-icon {
     svg {
       height: 1.6rem;
-      color: ${({ theme }) => theme.accentColor};
+      color: var(--accent-color);
     }
     margin-right: 1.9rem;
   }
   #search {
     border: none;
     flex-grow: 1;
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
     font-size: var(--text-sm);
-    caret-color: ${({ theme }) => theme.accentColor};
-    background-color: ${({ theme }) => theme.bodySecondary};
+    caret-color: var(--accent-color);
+    background-color: var(--body-secondary);
     height: 100%;
 
     ::placeholder {

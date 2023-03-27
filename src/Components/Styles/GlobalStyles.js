@@ -17,10 +17,23 @@ export const GlobalStyles = createGlobalStyle`
 --yellow: hsl(31, 86%, 59%); 
 --white: hsl(0, 0%, 100%); 
 --black: hsl(231, 27%, 10%); 
-
-
-
-
+--body: #f1f4f9;
+--body-secondary: hsl(0, 0%, 100%);
+--body-opacity:#343541;
+--text: hsl(207, 7%, 25%);
+--light-text: hsl(232, 15%, 52%);
+--text-inverted: hsl(0, 0%, 100%);
+--dark-blue: hsl(232, 15%, 52%);
+--banner-background: hsl(276, 45%, 96%);
+--background: hsl(0, 0%, 100%);
+--card-background: hsl(0, 0%, 100%);
+--border: 0.1rem solid hsla(215, 20%, 81%);
+--input-border: hsla(215, 20%, 81%);
+--accent-color: #0167ff;
+--filter:
+  invert(37%) sepia(91%) saturate(5653%) hue-rotate(210deg) brightness(101%) contrast(107%);
+--accent-opacity: "hsla(216, 100%, 50%, 0.50)";
+--footer-background: "hsl(0, 0%, 100%)";
 --text-xs: 1.2rem;
 --text-sm: 1.6rem;
 --text-md: 2.2rem;
@@ -56,11 +69,11 @@ body {
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-y: ${({ testState }) => (testState ? "hidden" : "none")};
-  background: ${({ theme }) => theme.body};
+  background: var(--body);
 }
 
 h1, h2, h3, h4 {
-color: ${({ theme }) => theme.text};
+color: var(--text);
 }
 
 h2 {

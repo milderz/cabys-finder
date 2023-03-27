@@ -11,7 +11,7 @@ export const StyledContactForm = styled.section`
   }
 
   .contact-form {
-    background-color: ${({ theme }) => theme.background};
+    background-color: var(--background);
     flex: 1.2;
     display: flex;
     flex-direction: column;
@@ -39,9 +39,9 @@ export const StyledContactForm = styled.section`
 
   .contact-form-textarea {
     border: 2px solid transparent;
-    background-color: ${({ theme }) => theme.body};
+    background-color: var(--body);
     font-size: var(--text-sm);
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
     padding: 1.6rem 0 0 1.6rem;
     border-radius: 0.8rem;
     width: 100%;
@@ -51,10 +51,10 @@ export const StyledContactForm = styled.section`
     transition: border 0.2s ease;
 
     ::placeholder {
-      color: ${({ theme }) => theme.text};
+      color: var(--text);
     }
     :focus {
-      border: 2px solid ${({ theme }) => theme.accentColor};
+      border: 2px solid var(--accent-color);
       outline: none;
     }
   }
@@ -62,19 +62,19 @@ export const StyledContactForm = styled.section`
     height: 100%;
     width: 100%;
     border: 2px solid transparent;
-    background-color: ${({ theme }) => theme.body};
+    background-color: var(--body);
     font-size: var(--text-sm);
-    color: ${({ theme }) => theme.text};
+    color: var(--text);
     padding-left: 1.6rem;
     border-radius: 0.8rem;
     transition: border 0.2s ease;
 
     ::placeholder {
-      color: ${({ theme }) => theme.text};
+      color: var(--text);
     }
 
     :focus {
-      border: 2px solid ${({ theme }) => theme.accentColor};
+      border: 2px solid var(--accent-color);
       outline: none;
     }
   }

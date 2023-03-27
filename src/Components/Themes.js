@@ -16,7 +16,6 @@ export const lightTheme = {
     "invert(37%) sepia(91%) saturate(5653%) hue-rotate(210deg) brightness(101%) contrast(107%);",
   accentOpacity: "hsla(216, 100%, 50%, 0.50)",
   footerBackground: "hsl(0, 0%, 100%)",
-  bannerImage: 'url("5528913.jpg")',
 };
 export const darkTheme = {
   body: "#343541",
@@ -30,11 +29,9 @@ export const darkTheme = {
   background: "#40414f",
   border: "0.1rem solid #9da1aa75",
   inputBorder: " hsla(222, 7%, 64%, 0.459)",
-  accentColor: "#fbff00",
+  accentColor: "#0167ff",
   filter:
     "invert(95%) sepia(42%) saturate(2905%) hue-rotate(3deg) brightness(102%) contrast(101%)",
   accentOpacity: "hsla(61, 100%, 50%, 0.5)",
   footerBackground: "#3f3f4b",
-  bannerImage:
-    "linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url('bg-banner.webp')",
 };

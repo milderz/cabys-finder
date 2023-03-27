@@ -6,15 +6,15 @@ export const StyledHero = styled.main`
   flex-direction: column;
   justify-content: center;
   gap: 4.2rem;
-  border-bottom: ${({ theme }) => theme.border};
+  border-bottom: var(--border);
 
   .hero-description {
     font-size: var(--text-sm);
-    color: ${({ theme }) => theme.lightText};
+    color: var(--light-text);
     max-width: 82ch;
 
     span {
-      color: ${({ theme }) => theme.accentColor};
+      color: var(--accent-color);
       font-weight: 600;
     }
   }
