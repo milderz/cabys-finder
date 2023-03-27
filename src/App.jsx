@@ -31,7 +31,6 @@ import LoginSection from "./Components/LoginSection";
 import ModalAlert from "./Components/ModalAlert";
 import ContactBanner from "./Components/ContactBanner";
 import { AppContext } from "./Context/AppContext";
-import { ThemeContext } from "./Context/ThemeContext";
 import { useContext } from "react";
 
 import noResults from "./assets/lupa.png";
@@ -39,7 +38,8 @@ import noSearchResults from "./assets/lupa-sin-resultados.png";
 import codesFolder from "./assets/carpeta-de-archivos.png";
 
 function App() {
-  const { user, loadingUserData, userLoggedIn } = UserAuth();
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const { user, loadingUserData } = UserAuth();
 
   const {
     eventQueue,
@@ -62,6 +62,10 @@ function App() {
     handleDeleteCode,
     searchTerm,
   } = useContext(AppContext);
+
+  useEffect(() => {
+    user?.displayName && setUserLoggedIn(true);
+  }, [user]);
 
   return (
     <Router>
