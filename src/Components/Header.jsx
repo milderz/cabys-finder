@@ -100,11 +100,6 @@ const Header = ({
         </ul>
       </nav>
       <div className="nav-btns-container">
-        <ColorModeButton
-          handleDarkModeToggle={handleDarkModeToggle}
-          themeToggler={themeToggler}
-          theme={theme}
-        />
         {loadingUserData && <div className="loading-user"></div>}
 
         {userLoggedIn && (
@@ -140,7 +135,7 @@ const Header = ({
             </div>
           </div>
         )}
-        {userLoggedIn === false && (
+        {!userLoggedIn && (
           <Button
             version="main-small"
             color="accent"
