@@ -159,7 +159,7 @@ export const AppContextProvider = ({ children }) => {
 
   useEffect(() => {
     user && setUserLoggedIn(true);
-    setUserId(user.email);
+    user && setUserId(user.email);
   }, [user]);
 
   return (
