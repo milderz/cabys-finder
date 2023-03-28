@@ -13,6 +13,9 @@ export const StyledButton = styled.button`
   font-size: var(--text-sm);
   font-weight: 500;
   width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   background-color: ${({ theme, color }) =>
     color === "accent"
@@ -33,5 +36,15 @@ export const StyledButton = styled.button`
 
   svg {
     padding-right: 1.2rem;
+
+    @media screen and (max-width: 630px) {
+      padding-right: ${({ mobileVersion }) => (mobileVersion ? "0" : "1.2rem")};
+    }
+  }
+
+  p {
+    @media screen and (max-width: 630px) {
+      display: ${({ mobileVersion }) => (mobileVersion ? "none" : "block")};
+    }
   }
 `;

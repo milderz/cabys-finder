@@ -136,6 +136,7 @@ const Header = ({
             text="Iniciar sesión"
             icon="faArrowRightFromBracket"
             handleFunction={handleGoogleSignIn}
+            mobileVersion={true}
           />
         )}
       </div>
