@@ -17,13 +17,13 @@ export const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
 
-  background-color: ${({ theme, color }) =>
+  background-color: ${({ color }) =>
     color === "accent"
       ? "var(--accent-color)"
       : color === "white"
       ? "var(--text)"
       : color === "black"
-      ? theme.body
+      ? "var(--body)"
       : "none"};
   color: var(--text-inverted);
   transition: background-color 0.2s ease;
