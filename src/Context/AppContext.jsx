@@ -158,7 +158,7 @@ export const AppContextProvider = ({ children }) => {
   const { user } = UserAuth();
 
   useEffect(() => {
-    user && setUserLoggedIn(true);
+    user ? setUserLoggedIn(true) : setUserLoggedIn(false);
     user && setUserId(user.email);
   }, [user]);
 

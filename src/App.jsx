@@ -39,6 +39,11 @@ import codesFolder from "./assets/carpeta-de-archivos.png";
 
 function App() {
   const { user, loadingUserData } = UserAuth();
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+
+  useEffect(() => {
+    user ? setUserLoggedIn(true) : setUserLoggedIn(false);
+  }, [user]);
 
   const {
     eventQueue,
@@ -60,7 +65,6 @@ function App() {
     handleNotifications,
     handleDeleteCode,
     searchTerm,
-    userLoggedIn,
   } = useContext(AppContext);
 
   return (
